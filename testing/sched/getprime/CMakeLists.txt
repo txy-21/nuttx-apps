@@ -1,5 +1,5 @@
 # ##############################################################################
-# apps/testing/cpuload/CMakeLists.txt
+# apps/testing/sched/getprime/CMakeLists.txt
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -20,16 +20,14 @@
 #
 # ##############################################################################
 
-if(CONFIG_TESTING_CPULOAD)
+if(CONFIG_TESTING_GETPRIME)
   nuttx_add_application(
     NAME
-    cpuload
-    PRIORITY
-    253
-    STACKSIZE
-    ${CONFIG_DEFAULT_TASK_STACKSIZE}
-    MODULE
-    ${CONFIG_TESTING_CPULOAD}
+    ${CONFIG_TESTING_GETPRIME_PROGNAME}
     SRCS
-    cpuload_main.c)
+    getprime_main.c
+    STACKSIZE
+    ${CONFIG_TESTING_GETPRIME_STACKSIZE}
+    PRIORITY
+    ${CONFIG_TESTING_GETPRIME_PRIORITY})
 endif()

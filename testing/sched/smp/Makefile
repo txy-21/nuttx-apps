@@ -1,5 +1,5 @@
 ############################################################################
-# apps/testing/smp/Makefile
+# apps/testing/sched/smp/Makefile
 #
 # SPDX-License-Identifier: Apache-2.0
 #

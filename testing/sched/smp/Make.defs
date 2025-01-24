@@ -1,5 +1,5 @@
 ############################################################################
-# apps/testing/cpuload/Makefile
+# apps/testing/sched/smp/Make.defs
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -20,13 +20,6 @@
 #
 ############################################################################
 
-include $(APPDIR)/Make.defs
-
-PROGNAME  = cpuload
-PRIORITY  = 253
-STACKSIZE = $(CONFIG_DEFAULT_TASK_STACKSIZE)
-MODULE    = $(CONFIG_TESTING_CPULOAD)
-
-MAINSRC = cpuload_main.c
-
-include $(APPDIR)/Application.mk
+ifneq ($(CONFIG_TESTING_SMP),)
+CONFIGURED_APPS += $(APPDIR)/testing/sched/smp
+endif

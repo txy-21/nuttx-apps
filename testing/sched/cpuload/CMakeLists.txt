@@ -1,5 +1,5 @@
 # ##############################################################################
-# apps/testing/atomic/CMakeLists.txt
+# apps/testing/sched/cpuload/CMakeLists.txt
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -20,16 +20,16 @@
 #
 # ##############################################################################
 
-if(CONFIG_TESTING_ATOMIC)
+if(CONFIG_TESTING_CPULOAD)
   nuttx_add_application(
     NAME
-    ${CONFIG_TESTING_ATOMIC_PROGNAME}
+    cpuload
     PRIORITY
-    ${CONFIG_TESTING_ATOMIC_PRIORITY}
+    253
     STACKSIZE
-    ${CONFIG_TESTING_ATOMIC_STACKSIZE}
+    ${CONFIG_DEFAULT_TASK_STACKSIZE}
     MODULE
-    ${CONFIG_TESTING_ATOMIC}
+    ${CONFIG_TESTING_CPULOAD}
     SRCS
-    atomic_main.c)
+    cpuload_main.c)
 endif()

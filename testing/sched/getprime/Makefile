@@ -1,5 +1,5 @@
 ############################################################################
-# apps/testing/smp/Make.defs
+# apps/testing/sched/getprime/Makefile
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -20,6 +20,17 @@
 #
 ############################################################################
 
-ifneq ($(CONFIG_TESTING_SMP),)
-CONFIGURED_APPS += $(APPDIR)/testing/smp
-endif
+include $(APPDIR)/Make.defs
+
+# getprime built-in application info
+
+PROGNAME = $(CONFIG_TESTING_GETPRIME_PROGNAME)
+PRIORITY = $(CONFIG_TESTING_GETPRIME_PRIORITY)
+STACKSIZE = $(CONFIG_TESTING_GETPRIME_STACKSIZE)
+MODULE = $(CONFIG_TESTING_GETPRIME)
+
+# getprime main source
+
+MAINSRC = getprime_main.c
+
+include $(APPDIR)/Application.mk

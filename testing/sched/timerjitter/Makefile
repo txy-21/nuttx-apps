@@ -1,5 +1,5 @@
 ############################################################################
-# apps/testing/timerjitter/Makefile
+# apps/testing/sched/timerjitter/Makefile
 #
 # SPDX-License-Identifier: Apache-2.0
 #
